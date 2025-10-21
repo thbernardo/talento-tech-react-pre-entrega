@@ -31,7 +31,7 @@ const HomePage = () => {
       <p style={{ fontSize: '1.2rem', color: '#b0b0b0', marginBottom: '2rem' }}>
         Tu tienda N°1 para comprar videojuegos.
       </p>
-
+      <h1>Juegos Destacados</h1>
       {loading ? (
         <p>Cargando juegos destacados...</p>
       ) : (
@@ -43,7 +43,7 @@ const HomePage = () => {
           dynamicHeight={false}  
         >
           {games.map(game => (
-            <div key={game.id} style={{ height: '400px', color: 'white' }}>
+            <div key={game.id} style={{ height: '800px', color: 'white' }}>
               <img 
                 src={game.background_image} 
                 alt={game.name} 
