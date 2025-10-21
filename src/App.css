@@ -1,0 +1,211 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+:root {
+  --bg-main: #181a1b;     
+  --bg-card: #25282a;      
+  --text-primary: #e0e0e0; 
+  --text-secondary: #b0b0b0;
+  --color-accent: #00aaff;  
+  --color-accent-hover: #0088cc; 
+  --border-color: #3a3d40; 
+}
+
+body {
+  font-family: 'Poppins', system-ui, sans-serif; 
+  background-color: var(--bg-main);
+  color: var(--text-primary);
+  margin: 0;
+  padding: 0;
+}
+
+.app-container {
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+header h1 {
+  font-size: 2.5rem;
+  color: var(--color-accent); 
+  margin: 0;
+}
+
+main {
+  justify-content: center;
+  display: flex;
+  flex-wrap: wrap; 
+  gap: 2rem;
+}
+
+.product-list {
+  flex-basis: 1100px; 
+  max-width: 100%;
+  min-width: 300px;
+  text-align: center; 
+}
+
+.items-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
+  gap: 1.5rem; 
+  text-align: left;
+}
+
+.product-item {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 1rem;
+  text-align: center;
+  transition: transform 0.2s ease-out, box-shadow 0.2s ease-out; 
+}
+.product-item:hover {
+  transform: translateY(-5px); 
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); 
+}
+
+.product-item h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  color: var(--text-primary);
+}
+.product-item p {
+  color: var(--text-secondary);
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  font-weight: 600; 
+}
+
+.product-item button {
+  background-color: var(--color-accent);
+  color: #111; 
+  border: none;
+  padding: 10px 16px; 
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 600; 
+  font-family: 'Poppins', sans-serif;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+.product-item button:hover {
+  background-color: var(--color-accent-hover);
+  transform: scale(1.05); 
+}
+
+.cart {
+  flex-basis: 300px; 
+  flex-grow: 0; 
+  flex-shrink: 0; 
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 1.5rem;
+  height: fit-content; 
+}
+.cart h2 {
+  margin-top: 0;
+  color: var(--color-accent);
+}
+.cart ul {
+  list-style: none;
+  padding: 0;
+}
+.cart li {
+  padding: 8px 0;
+  border-bottom: 1px solid var(--border-color);
+  color: var(--text-secondary);
+  display: flex;
+  justify-content: space-between;
+}
+.cart li:last-child {
+  border-bottom: none;
+}
+.cart p {
+  color: var(--text-primary);
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-top: 1rem;
+}
+
+.cart-notification {
+  position: fixed;
+  bottom: 30px;
+  right: 30px; 
+  
+  display: flex;
+  align-items: center;
+  gap: 15px;
+
+  background-color: var(--bg-card); 
+  color: var(--text-primary);
+  padding: 12px 15px;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
+  z-index: 1000;
+  overflow: hidden;
+  
+  animation: slideIn 0.3s ease-out, slideOut 0.3s ease-in 2.7s;
+}
+
+.notification-image {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.notification-content {
+  flex-grow: 1;
+}
+.notification-content strong {
+  color: var(--color-accent);
+  font-size: 1rem;
+}
+.notification-content p {
+  margin: 0;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+.notification-close {
+  background: transparent;
+  border: none;
+  color: var(--text-secondary);
+  font-size: 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 0 5px;
+}
+.notification-close:hover {
+  color: var(--text-primary);
+}
+
+.notification-progress {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 4px;
+  width: 100%;
+  background-color: var(--color-accent);
+  animation: shrink 3s linear forwards; 
+}
+
+@keyframes shrink {
+  from { width: 100%; }
+  to { width: 0%; }
+}
+
+@keyframes slideIn {
+  from { transform: translateX(110%); }
+  to { transform: translateX(0); }
+}
+
+@keyframes slideOut {
+  from { transform: translateX(0); }
+  to { transform: translateX(110%); }
+}
