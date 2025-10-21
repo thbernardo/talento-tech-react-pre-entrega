@@ -14,7 +14,7 @@ const HomePage = () => {
   const [loading, setLoading] = useState(true);
   
   useEffect(() => {
-    fetch('/juegos.json')
+    fetch(`${import.meta.env.BASE_URL}juegos.json`)
       .then(response => response.json())
       .then(data => {
         setGames(data.results.slice(0, 5)); 
