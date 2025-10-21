@@ -29,7 +29,7 @@ const Cart = ({ cartItems, onRemoveFromCart, onCheckout }) => {
   
   return (
     <div className="cart">
-      <h2>🛒 Carrito</h2>
+      <h2>Carrito</h2>
       {cartItems.length === 0 ? (
         <p>Tu carrito está vacío.</p>
       ) : (

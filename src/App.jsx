@@ -64,7 +64,7 @@ function App() {
   const handleLogin = () => {
     setIsLoggedIn(true);
     alert('¡Sesión iniciada! Ahora podés ver el carrito.');
-    navigate('/juegos'); 
+    navigate('/carrito'); 
   };
 
 

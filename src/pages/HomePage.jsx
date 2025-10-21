@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from 'react';
-
 import { Carousel } from 'react-responsive-carousel';
 import "react-responsive-carousel/lib/styles/carousel.min.css"; 
 
 const homeStyles = {
   textAlign: 'center',
-  padding: '2rem 0' 
+  padding: '2rem 0'
 };
 
 const HomePage = () => {
@@ -24,11 +23,11 @@ const HomePage = () => {
         console.error("Error cargando juegos para el carrusel:", err);
         setLoading(false);
       });
-  }, []); 
+  }, []);
 
   return (
     <div style={homeStyles}>
-      <h1>🎮Bienvenido a GameStore🎮</h1>
+      <h1>Bienvenido a 🎮 GameStore</h1>
       <p style={{ fontSize: '1.2rem', color: '#b0b0b0', marginBottom: '2rem' }}>
         Tu tienda N°1 para comprar videojuegos.
       </p>
@@ -44,7 +43,7 @@ const HomePage = () => {
           dynamicHeight={false}  
         >
           {games.map(game => (
-            <div key={game.id} style={{ height: '800px', color: 'white' }}>
+            <div key={game.id} style={{ height: '400px', color: 'white' }}>
               <img 
                 src={game.background_image} 
                 alt={game.name} 
