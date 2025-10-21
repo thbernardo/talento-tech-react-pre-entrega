@@ -12,7 +12,7 @@ const GamesPage = ({ onAddToCart }) => {
       setLoading(true);
       setError(null);   
       
-      fetch('/juegos.json') 
+      fetch(`${import.meta.env.BASE_URL}juegos.json`)
         .then(response => {
           if (!response.ok) {
             throw new Error('No se pudo cargar el archivo juegos.json');

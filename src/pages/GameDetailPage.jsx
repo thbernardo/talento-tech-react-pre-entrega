@@ -62,7 +62,7 @@ const GameDetailPage = () => {
       setLoading(true);
       setError(null);
       
-      fetch('/juegos.json') 
+      fetch(`${import.meta.env.BASE_URL}juegos.json`)
         .then(response => response.json())
         .then(data => {
           const foundGame = data.results.find(p => p.id == gameId);
