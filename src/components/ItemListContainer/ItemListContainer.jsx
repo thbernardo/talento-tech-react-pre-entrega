@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import ProductList from '../components/ProductList'; 
+import ItemList from '../ItemList/ItemList'; 
 
-const GamesPage = ({ onAddToCart }) => {
+const ItemListContainer = () => {
   
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -32,19 +32,19 @@ const GamesPage = ({ onAddToCart }) => {
     fetchGames();
   }, []);
 
-
   return (
     <div className="product-list">
+      <h2>Juegos Disponibles</h2>
       
       {loading && <p>Cargando juegos...</p>}
       
       {error && <p style={{ color: 'red' }}>Error: {error}</p>}
 
       {!loading && !error && (
-        <ProductList products={products} onAddToCart={onAddToCart} />
+        <ItemList products={products} />
       )}
     </div>
   );
 };
 
-export default GamesPage;
+export default ItemListContainer;

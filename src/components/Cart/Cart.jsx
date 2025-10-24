@@ -1,4 +1,5 @@
 import React from 'react';
+import { useCart } from '../../context/CartContext'; 
 
 const buttonStyles = {
   padding: '10px 20px',
@@ -22,19 +23,20 @@ const removeButtonStyles = {
   fontSize: '0.8rem',
   marginLeft: '10px'
 };
-
-const Cart = ({ cartItems, onRemoveFromCart, onCheckout }) => {
+const Cart = () => {
   
-  const total = cartItems.reduce((acc, item) => acc + item.price, 0);
+  const { cart, removeFromCart, handleCheckout } = useCart();
+  
+  const total = cart.reduce((acc, item) => acc + item.price, 0);
   
   return (
     <div className="cart">
-      <h2>Carrito</h2>
-      {cartItems.length === 0 ? (
+      <h2>🛒Carrito🛒</h2>
+      {cart.length === 0 ? (
         <p>Tu carrito está vacío.</p>
       ) : (
         <ul>
-          {cartItems.map((item, index) => (
+          {cart.map((item, index) => (
             <li 
               key={index} 
               style={{ 
@@ -56,13 +58,12 @@ const Cart = ({ cartItems, onRemoveFromCart, onCheckout }) => {
                   marginRight: '10px'
                 }}
               />
-              
               <span style={{ flexGrow: 1, fontSize: '0.9rem' }}>
                 {item.name} - ${item.price}
               </span>
               <button 
                 style={removeButtonStyles} 
-                onClick={() => onRemoveFromCart(index)}
+                onClick={() => removeFromCart(index)}
               >
                 Eliminar
               </button>
@@ -71,13 +72,13 @@ const Cart = ({ cartItems, onRemoveFromCart, onCheckout }) => {
         </ul>
       )}
       
-      <p><strong>Total de Items: {cartItems.length}</strong></p>
+      <p><strong>Total de Items: {cart.length}</strong></p>
       <p><strong>Precio Total: ${total}</strong></p>
       
       <button 
         style={buttonStyles}
-        onClick={onCheckout}
-        disabled={cartItems.length === 0} 
+        onClick={handleCheckout} 
+        disabled={cart.length === 0} 
       >
         Comprar Ahora
       </button>

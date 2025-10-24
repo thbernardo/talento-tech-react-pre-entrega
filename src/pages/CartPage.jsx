@@ -1,14 +1,10 @@
 import React from 'react';
-import Cart from '../components/Cart'; 
+import Cart from '../components/Cart/Cart'; 
 
-const CartPage = ({ cartItems, onRemoveFromCart, onCheckout }) => {
+const CartPage = () => {
   return (
     <div style={{ padding: '2rem' }}>
-      <Cart 
-        cartItems={cartItems} 
-        onRemoveFromCart={onRemoveFromCart}
-        onCheckout={onCheckout}
-      />
+      <Cart />
     </div>
   );
 };

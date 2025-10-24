@@ -27,7 +27,7 @@ const HomePage = () => {
 
   return (
     <div style={homeStyles}>
-      <h1>Bienvenido a 🎮 GameStore</h1>
+      <h1>🎮Bienvenido a GameStore🎮</h1>
       <p style={{ fontSize: '1.2rem', color: '#b0b0b0', marginBottom: '2rem' }}>
         Tu tienda N°1 para comprar videojuegos.
       </p>
