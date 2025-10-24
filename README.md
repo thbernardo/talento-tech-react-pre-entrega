@@ -71,4 +71,4 @@ El proyecto cumple con todos los requerimientos de la pre-entrega, incluyendo:
 
 * **Curso:** Talento Tech - React
 * **Autor:** thbernardo (Thomas Bernardo)
-* **Entrega:** Pre-Entrega React JS (Refactorizada con Context API)
+* **Entrega:** Pre-Entrega React JS
